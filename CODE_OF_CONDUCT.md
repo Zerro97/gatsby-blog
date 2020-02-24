@@ -1,0 +1,1 @@
+Be friendly to each other.
