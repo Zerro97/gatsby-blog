@@ -40,6 +40,23 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 850,
+            },
+          },
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `100`,
+              maintainCase: false,
+              removeAccents: true,
+            },
+          },
+          /*
+          {
             resolve: `gatsby-remark-relative-images`
           },
           {
@@ -54,6 +71,7 @@ module.exports = {
           "gatsby-remark-copy-linked-files",
           "gatsby-remark-autolink-headers",
           "gatsby-remark-prismjs"
+          */
         ]
       }
     },
@@ -156,6 +174,7 @@ module.exports = {
               allMarkdownRemark(
                 limit: 1000,
                 sort: { order: DESC, fields: [fields___date] },
+                filter: { frontmatter: { template: { eq: "post" } } }
               ) {
                 edges {
                   node {
@@ -172,6 +191,7 @@ module.exports = {
                       date
                       category
                       tags
+                      template
                     }
                   }
                 }

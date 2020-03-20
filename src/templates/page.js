@@ -16,7 +16,6 @@ const PageTemplate = ({ pageContext, markdownRemark }) => {
 export default PageTemplate
 
 /* eslint no-undef: "off" */
-/*
 export const pageQuery = graphql`
   query PageBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -34,4 +33,3 @@ export const pageQuery = graphql`
     }
   }
 `
-*/
