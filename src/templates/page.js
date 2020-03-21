@@ -10,7 +10,6 @@ const PageTemplate = ({ pageContext, data }) => {
   const [slug, setSlug] = useState(null);
 
   useEffect(() => {
-    console.log(data);
     // Get html, frontmatter, slug from markdown files and store them as state
     setSlug(pageContext.slug);
     setPage(data.markdownRemark);

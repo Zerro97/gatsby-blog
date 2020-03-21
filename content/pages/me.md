@@ -5,6 +5,4 @@ slug: me
 template: page
 ---
 
-I’m Huibeom Kim, a full stack software developer. I currently spend most of my time programming in JavaScript and Java.
-
-I started this website as a place to document everything I learned. I learn and write about everything I know.
+My name is Huibeom Kim, a full stack software developer in the making. I currently attend University of Wisconsin-Madison, studying bachelor of computer science. I plan to use this website as my portfolio site as well as a place to document everything that I learned.

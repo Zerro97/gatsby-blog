@@ -13,7 +13,7 @@ const Index = () => {
           <div className="elevator">
             <h1>{`Greetings`}</h1>
             <p>
-              I'm a full stack software developer creating projects and writing about modern JavaScript, Node.js, and development.
+              My name is Huibeom Kim and I am a full stack software developer in the making. I create open source projects and write about programming in general.
             </p>
           </div>
         </div>
