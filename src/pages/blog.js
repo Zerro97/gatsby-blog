@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../layout'
+import PostListing from '../components/PostListing'
 import config from '../../data/SiteConfig'
 
 const BlogPage = ({data}) => {
@@ -84,7 +85,7 @@ const BlogPage = ({data}) => {
             />
             <div className="filter-count">{filteredPosts.length}</div>
           </div>
-
+          <PostListing postEdges={filteredPosts} />
         </div>
       </Layout>
     )

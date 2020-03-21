@@ -2,18 +2,21 @@ import React, {useEffect, useState} from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
+import { formatDate, editOnGithub } from '../utils/global'
 import config from "../../data/SiteConfig";
 
 const PostTemplate = ({ pageContext, data }) => {
   const [post, setPost] = useState({id: null, html: null});
   const [frontmatter, setFrontmatter] = useState({title: null, slug: null, date: null, categories: null, tags: null, template: null, id: null});
   const [slug, setSlug] = useState(null);
+  const [date, setDate] = useState(null);
 
   useEffect(() => {
     // Get html, frontmatter, slug from markdown files and store them as state
     setSlug(pageContext.slug);
     setPost(data.markdownRemark);
     setFrontmatter(data.markdownRemark.frontmatter);
+    setDate(formatDate(post.date));
 
     if (!post.id) {
       post.id = slug;
@@ -26,13 +29,18 @@ const PostTemplate = ({ pageContext, data }) => {
         <Helmet>
           <title>{`${frontmatter.title} | ${config.siteTitle}`}</title>
         </Helmet>
-        <div>
-          <h1>{frontmatter.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-            <div className="post-meta">
-
+        <article className="single container">
+          <header className={`single-header no-thumbnail`}>
+            <div className="flex">
+              <h1>{post.title}</h1>
+              <div className="post-meta">
+                <time className="date">{date}</time>/
+              </div>
             </div>
-        </div>
+          </header>
+
+          <div className="post" dangerouslySetInnerHTML={{ __html: post.html }} />
+        </article>
       </div>
     </Layout>
   );
