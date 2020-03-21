@@ -77,18 +77,21 @@ exports.createPages = async ({ graphql, actions }) => {
   const categorySet = new Set();
 
   markdownQueryResult.data.allMarkdownRemark.edges.forEach(edge => {
+    // Adding tags in all pages to set
     if (edge.node.frontmatter.tags) {
       edge.node.frontmatter.tags.forEach(tag => {
         tagSet.add(tag)
       })
     }
 
+    // Adding categories in all pages to set
     if (edge.node.frontmatter.categories) {
       edge.node.frontmatter.categories.forEach(category => {
         categorySet.add(category)
       })
     }
 
+    // If the page is post type
     if (edge.node.frontmatter.template === 'post') {
       createPage({
         path: edge.node.fields.slug,
@@ -99,6 +102,7 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     }
 
+    // If the page is page type
     if (edge.node.frontmatter.template === 'page') {
       createPage({
         path: edge.node.fields.slug,
@@ -110,7 +114,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   });
 
-  //  Create tag pages
+  //  Create page displaying all tags
   const tagList = Array.from(tagSet)
   tagList.forEach(tag => {
     createPage({
@@ -122,7 +126,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Create category pages
+  // Create page displaying all categories
   const categoryList = Array.from(categorySet)
   categoryList.forEach(category => {
     createPage({
