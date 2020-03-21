@@ -20,12 +20,8 @@ const config = {
       link: '/me/',
     },
     {
-      name: 'Articles',
+      name: 'Blog',
       link: '/blog/',
-    },
-    {
-      name: 'Contact',
-      link: '/contact/',
     },
   ],
   copyright: "Copyright © 2019. Advanced User", // Copyright string for the footer of the website and RSS feed.
