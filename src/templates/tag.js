@@ -1,22 +1,27 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
 
-const TagTemplate = ({ pageContext, markdownRemark }) => {
+const TagTemplate = ({ pageContext, data }) => {
+  const [tag, setTag] = useState(null);
+  const [edges, setEdges] = useState(null);
+
   useEffect(() => {
-    const { tag } = this.props.pageContext;
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+    setTag(pageContext.tag);
+    setEdges(data.allMarkdownRemark.edges);
   });
 
   return (
     <Layout>
-      <div className="tag-container">
-        <Helmet title={`Posts tagged as "${tag}" | ${config.siteTitle}`} />
-        <PostListing postEdges={postEdges} />
-      </div>
-    </Layout>
+      <Helmet title={`Posts tagged as "${tag}" – ${config.siteTitle}`} />
+      <div className="container">
+        <h1>
+          Posts tagged as <u>{tag}</u>
+        </h1>
+    </div>
+  </Layout>
   );
 }
 

@@ -1,21 +1,24 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../layout";
 import config from "../../data/SiteConfig";
 
-const CategoryTemplate = ({ pageContext, markdownRemark }) => {
+const CategoryTemplate = ({ pageContext, data }) => {
+  const [category, setCategory] = useState(null);
+  const [edges, setEdges] = useState(null);
+
   useEffect(() => {
-    const { category } = this.props.pageContext;
-    const postEdges = this.props.data.allMarkdownRemark.edges;
+    setCategory(pageContext.category);
+    setEdges(data.allMarkdownRemark.edges);
   });
 
   return (
     <Layout>
-      <div className="category-container">
-        <Helmet
-          title={`Posts in category "${category}" | ${config.siteTitle}`}
-        />
+      <Helmet title={`Posts in category "${category}" – ${config.siteTitle}`} />
+      <div className="container">
+        <h1>{category}</h1>
+        
       </div>
     </Layout>
   );
