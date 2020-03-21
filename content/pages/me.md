@@ -1,5 +1,6 @@
 ---
-title: About me
+date: 2015-09-24
+title: 'About me'
 slug: me
 template: page
 ---

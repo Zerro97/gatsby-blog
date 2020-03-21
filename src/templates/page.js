@@ -17,7 +17,7 @@ const PageTemplate = ({ pageContext, data }) => {
     setFrontmatter(data.markdownRemark.frontmatter);
 
     if (!page.id) {
-      post.id = slug;
+      page.id = slug;
     }
   });
 
