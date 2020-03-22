@@ -32,9 +32,9 @@ const PostTemplate = ({ pageContext, data }) => {
         <article className="single container">
           <header className={`single-header no-thumbnail`}>
             <div className="flex">
-              <h1>{post.title}</h1>
+              <h1>{frontmatter.title}</h1>
               <div className="post-meta">
-                <time className="date">{date}</time>/
+                <time className="date">{date}</time>
               </div>
             </div>
           </header>

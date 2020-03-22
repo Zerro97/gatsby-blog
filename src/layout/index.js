@@ -16,18 +16,14 @@ const Layout = ({ children }) => {
 
   // ComponentDidMount
   useEffect(() => { 
-    if (dark && !notFound) {
-      themeClass = 'dark'
-    } else if (notFound) {
-      themeClass = 'not-found'
-    }
+
   })
 
   return(
     <>
       <Helmet
         bodyAttributes={{
-          class: `theme ${themeClass}`,
+          class: `theme`,
         }}
       >
         <meta name="description" content={config.siteDescription} />

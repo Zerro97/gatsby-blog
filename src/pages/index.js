@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../layout'
 import config from '../../data/SiteConfig'
+import profile from '../images/profile-photo2.jpg'
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
               My name is Huibeom Kim and I am a full stack software developer in the making. I create open source projects and write about programming in general.
             </p>
           </div>
+          <img src={profile} className="profile-image"/>
         </div>
       </div>
     </Layout>
