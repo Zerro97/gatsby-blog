@@ -11,6 +11,6 @@ My name is Huibeom Kim and I currently attend University of Wisconsin-Madison, s
 
 - [MERN Social Media](https://github.com/Zerro97/mern-social-media) - Practice social media web application leveraging MERN stack
 - [Graphics Town](https://github.com/Zerro97/GraphicsTown) - Graphics application built during CS559 course
-- [Calorie Tracker](https://github.com/Zerro97/mern-social-media) - Mobile ios/android application built with react native
-- [Space Shooter](https://github.com/Zerro97/mern-social-media) - Practice java game application leveraging awt and swing API
+- [Calorie Tracker](https://github.com/Zerro97/CalorieTracker-cs639-) - Mobile ios/android application built with react native
+- [Space Shooter](https://github.com/Zerro97/Space-Shooter) - Practice java game application leveraging awt and swing API
 
