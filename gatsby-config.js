@@ -188,9 +188,8 @@ module.exports = {
                     }
                     frontmatter {
                       title
-                      cover
                       date
-                      category
+                      categories
                       tags
                       template
                     }
