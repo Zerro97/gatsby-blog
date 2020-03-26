@@ -16,12 +16,13 @@ const PostTemplate = ({ pageContext, data }) => {
     setSlug(pageContext.slug);
     setPost(data.markdownRemark);
     setFrontmatter(data.markdownRemark.frontmatter);
-    setDate(formatDate(post.date));
+    setDate(formatDate(data.markdownRemark.frontmatter.date));
+
 
     if (!post.id) {
       post.id = slug;
     }
-  });
+  }, [post, frontmatter, slug, date]);
 
   return (
     <Layout>
